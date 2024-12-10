@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Book</h1>
+    </header>
+    <main>
+        <div class="container">
+            <section id="add-recipe">
+                <h2>Add a Recipe</h2>
+                <form id="recipe-form">
+                    <input type="text" id="recipe-name" placeholder="Recipe Name" required>
+                    <textarea id="recipe-ingredients" placeholder="Ingredients (comma separated)" required></textarea>
+                    <textarea id="recipe-instructions" placeholder="Instructions" required></textarea>
+                    <input type="file" id="recipe-image" accept="image/*" required>
+                    <button type="submit">Add Recipe</button>
+                </form>
+            </section>
+            
+            <section id="search-recipe">
+                <h2>Search Recipes</h2>
+                <input type="text" id="search-input" placeholder="Search by name or ingredient">
+                <ul id="search-results"></ul>
+            </section>
+            <section id="recipe-list"></section>
+                <h2>Recipes</h2>
+                <div id="success-message" style="display: none;"></div>
+                <ul id="recipes"></ul>
+            </section>
+        </div>
+
+        <!-- Modal for Recipe Details -->
+        <div id="recipe-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="modal-recipe-name"></h3>
+                <img id="modal-recipe-image" alt="">
+                <p><strong>Ingredients:</strong> <span id="modal-recipe-ingredients"></span></p>
+                <p><strong>Instructions:</strong> <span id="modal-recipe-instructions"></span></p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
